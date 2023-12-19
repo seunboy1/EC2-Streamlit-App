@@ -1,9 +1,8 @@
 # EC2-Streamlit-App
 This is a simple project that shows how to deploy a GPT-3 app built with Streamlit on an AWS EC2 instance. 
 Deployment of a GPT streamlit app on ec2
-
 <br/>
-
+![app](assets/app.png)
 
 ## Steps to deploying
 
@@ -32,11 +31,14 @@ Deployment of a GPT streamlit app on ec2
         export openai_key=your key
     ```
    Nt: you have to reconnect to your ec2 instance to see the changes.
-6. Run streamlit app in background
+6. Edit the security group of your ec2 to allow inbound from 8501, since streamlit uses the 8501 port
+   ![inbound](assets/inbound.png)
+7. Run streamlit app in background
     ```bash
         nohup streamlit app.py &
     ```
-7. 
-
-
-
+8. Check out the app
+    ```bash
+        http://[your public ipv4 address]:8501
+    ```
+![app](assets/app.png)
