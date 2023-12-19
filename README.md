@@ -40,4 +40,5 @@ Deployment of a GPT streamlit app on ec2
 8. Check out the app
     ```bash
         http://[your public ipv4 address]:8501
+        http://52.201.250.185:8501
     ```
