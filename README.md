@@ -19,6 +19,11 @@ git clone https://github.com/seunboy1/EC2-Streamlit-App.git
 ### Install necessary libraries
 pip install -r requirements.txt
 
+### Permanently store your openai secret key as environment variable in ec2 
+vim ~/.bashrc
+export openai_key=your key
+Nt: you have to reconnect to your ec2 instance to see the changes.
+
 ### Run streamlit app in background
 nohup streamlit app.py &
 
