@@ -5,7 +5,7 @@ import streamlit as st
 openai.api_key= os.environ.get('openai_key')
 
 def main():
-    st.title("Product Descriptionss Generator")
+    st.title("Product Descriptions Generator")
     notes = st.text_area("Enter product information:")
     if st.button("Generate description"):
         with st.spinner("Generating description..."):
