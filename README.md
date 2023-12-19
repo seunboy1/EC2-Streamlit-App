@@ -16,5 +16,10 @@ source streamlit/bin/activate
 ### git clone this repo
 git clone https://github.com/seunboy1/EC2-Streamlit-App.git
 
+### Install necessary libraries
+pip install -r requirements.txt
+
 ### Run streamlit app in background
 nohup streamlit app.py &
+
+
