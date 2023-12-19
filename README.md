@@ -35,7 +35,7 @@ Deployment of a GPT streamlit app on ec2
    ![inbound](assets/inbound.png)
 7. Run streamlit app in background
     ```bash
-        nohup streamlit app.py &
+        nohup streamlit run app.py &
     ```
 8. Check out the app
    ```bash
