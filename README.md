@@ -41,4 +41,3 @@ Deployment of a GPT streamlit app on ec2
     ```bash
         http://[your public ipv4 address]:8501
     ```
-![app](assets/app.png)
