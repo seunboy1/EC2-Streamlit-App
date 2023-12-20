@@ -14,6 +14,8 @@ This is a simple project that shows how to deploy a GPT-3 app built with Streaml
 
 2. Setup python virtual environment - run these commands:
     ```bash
+        apt-get update
+        apt-get install python3-virtualenv
         apt install python3.10-venv 
         python3 -m venv ~/.[name] # create python VE
         source ~/.[name]/bin/activate #activate
