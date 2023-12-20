@@ -1,5 +1,5 @@
 # EC2-Streamlit-App
-This is a simple project that shows how to deploy a GPT-3 app built with Streamlit on an AWS EC2 instance using Github Actions as CI/CD pipeline. 
+This is a simple project that shows how to deploy a GPT-3 app built with Streamlit on an AWS EC2 instance whike also using Github Actions as CI/CD pipeline. 
 
 <br/>
 
@@ -41,7 +41,7 @@ This is a simple project that shows how to deploy a GPT-3 app built with Streaml
 8. Check out the app
    ```bash
         http://[your public ipv4 address]:8501
-        http://52.201.250.185:8501
+        http://34.203.229.115:8501
     ```
 9.  To take it a step further you can deploy it with a custom domain. Check out this [repo](https://github.com/seunboy1/Static-Website) on how to do it.
 
