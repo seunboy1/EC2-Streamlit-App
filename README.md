@@ -46,18 +46,12 @@ This is a simple project that shows how to deploy a GPT-3 app built with Streaml
 
 ## CI/CD with Github Actions
 
-1. To connect to EC2 instance, you need to install and configure Git Action Runner on our AWS EC2 instance. To download and configure a Git Action Runner on our EC2 instance:
-   1. Go to the GitHub repository and click on Settings.
-   2. On the left-hand sidebar, click on Actions then select Runners.
-   3. In the Runners page click on the New self-hosted runner button.
-        ![runner](assets/runner.png)
-   4. Then step by step, run the commands shown in the New self-hosted runner  page in your ec2 terminal
-   5. Next, install a service to run the runner agent in the background
-        ```bash
-            sudo ./svc.sh install
-            sudo ./svc.sh start
-        ```
-        The above code will start our runner service in the background, making it ready to execute workflows whenever triggered.
-   6. 
-2. 
+1. Create the necessary secret in Github 
+   * SSH_PRIVATE_KEY: This is your pem key file
+   * HOST_DNS: Your public dns 
+   * USERNAME: Username of your ec2, usually ubuntu or ec2-user
+   * TARGET
+        ![secret](assets/secret.png)
+2. Next create your workflow. Sample can be found in `.github/workflows/streamlit.yaml` 
+3. 
     
