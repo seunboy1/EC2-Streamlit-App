@@ -15,6 +15,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       
+        # this ssh into the ec2 instance and clones into the target directory
       - name: Deploy to Server ec2
         uses: easingthemes/ssh-deploy@main
         env:
@@ -34,5 +35,8 @@ jobs:
             sudo apt install python3.10-venv 
             python3 -m venv ~/.streamlit
             source ~/.streamlit/bin/activate
+            cd /home/ubuntu/EC2-Streamlit-App
+            pip install -r requirements.txt
+            nohup streamlit run app.py &
           
         
