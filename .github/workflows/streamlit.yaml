@@ -15,13 +15,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       
-      # - name: Deploy to Server ec2
-      #   uses: easingthemes/ssh-deploy@main
-      #   env:
-      #       SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-      #       HOST_DNS: ${{ secrets.HOST_DNS }}
-      #       USERNAME: ${{ secrets.USERNAME }}
-      #       TARGET_DIR: ${{ secrets.TARGET_DIR }}
+      - name: Deploy to Server ec2
+        uses: easingthemes/ssh-deploy@main
+        env:
+            SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+            REMOTE_HOST: ${{ secrets.HOST_DNS }}
+            REMOTE_USER: ${{ secrets.USERNAME }}
+            TARGET: ${{ secrets.TARGET_DIR }}
 
       - name: Executing remote ssh commands using ssh key
         uses: appleboy/ssh-action@master
@@ -32,7 +32,7 @@ jobs:
           script: |
             sudo apt-get -y update
             sudo apt install python3.10-venv 
-            python3 -m venv ~/.streamlit2
-            source ~/.streamlit2/bin/activate
+            python3 -m venv ~/.streamlit
+            source ~/.streamlit/bin/activate
             
         

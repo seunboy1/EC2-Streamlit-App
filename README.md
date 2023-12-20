@@ -2,6 +2,7 @@
 This is a simple project that shows how to deploy a GPT-3 app built with Streamlit on an AWS EC2 instance using Github Actions as CI/CD pipeline. 
 
 <br/>
+
 ![app](assets/app.png)
 
 ## Steps to deploying
@@ -48,10 +49,9 @@ This is a simple project that shows how to deploy a GPT-3 app built with Streaml
 
 1. Create the necessary secret in Github 
    * SSH_PRIVATE_KEY: This is your pem key file
-   * HOST_DNS: Your public dns 
-   * USERNAME: Username of your ec2, usually ubuntu or ec2-user
-   * TARGET
+   * REMOTE_HOST: Your public dns 
+   * REMOTE_USER: Username of your ec2, usually ubuntu or ec2-user
+   * TARGET: target destination of ec2 instance
         ![secret](assets/secret.png)
 2. Next create your workflow. Sample can be found in `.github/workflows/streamlit.yaml` 
-3. 
     
