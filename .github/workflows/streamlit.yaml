@@ -15,7 +15,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       
-        # this ssh into the ec2 instance and clones into the target directory
+      # this ssh into the ec2 instance and clones into the target directory
       - name: Deploy to Server ec2
         uses: easingthemes/ssh-deploy@main
         env:
