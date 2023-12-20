@@ -15,14 +15,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       
-        # this ssh into the ec2 instance and clones into the target directory
-      - name: Deploy to Server ec2
-        uses: easingthemes/ssh-deploy@main
-        env:
-            SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-            REMOTE_HOST: ${{ secrets.HOST_DNS }}
-            REMOTE_USER: ${{ secrets.USERNAME }}
-            TARGET: ${{ secrets.TARGET_DIR }}
+      #   # this ssh into the ec2 instance and clones into the target directory
+      # - name: Deploy to Server ec2
+      #   uses: easingthemes/ssh-deploy@main
+      #   env:
+      #       SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      #       REMOTE_HOST: ${{ secrets.HOST_DNS }}
+      #       REMOTE_USER: ${{ secrets.USERNAME }}
+      #       TARGET: ${{ secrets.TARGET_DIR }}
 
       - name: Executing remote ssh commands using ssh key
         uses: appleboy/ssh-action@master
