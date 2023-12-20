@@ -37,7 +37,6 @@ jobs:
             source ~/.streamlit/bin/activate
             cd /home/ubuntu/EC2-Streamlit-App
             pip install -r requirements.txt
-            ls
             nohup streamlit run app.py > nohup.out 2> nohup.err < /dev/null &
           
         

@@ -51,7 +51,7 @@ This is a simple project that shows how to deploy a GPT-3 app built with Streaml
    * SSH_PRIVATE_KEY: This is your pem key file
    * REMOTE_HOST: Your public dns 
    * REMOTE_USER: Username of your ec2, usually ubuntu or ec2-user
-   * TARGET: target destination of ec2 instance
+   * TARGET: target destination of ec2 instance to clone the repo into
         ![secret](assets/secret.png)
 2. Next create your workflow. Sample can be found in `.github/workflows/streamlit.yaml` 
     
