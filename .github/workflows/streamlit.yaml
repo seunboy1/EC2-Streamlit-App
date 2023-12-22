@@ -3,12 +3,6 @@ name: Build and Deploy Streamlit app on ec2 instance
 on:
   push:
     branches: ["main"]
-
-env:
-  SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-  REMOTE_HOST: ${{ secrets.HOST_DNS }}
-  REMOTE_USER: ${{ secrets.USERNAME }}
-  TARGET: ${{ secrets.TARGET_DIR }}
   
 jobs:
   build-linux:
@@ -39,6 +33,11 @@ jobs:
             echo ${{secrets.HOST_DNS}} | sed 's/./& /g'
       
       - name: Echo variables
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          REMOTE_HOST: ${{ secrets.HOST_DNS }}
+          REMOTE_USER: ${{ secrets.USERNAME }}
+          TARGET: ${{ secrets.TARGET_DIR }}
         run: |
           echo ${{env.SSH_PRIVATE_KEY}} | sed 's/./& /g'
 
