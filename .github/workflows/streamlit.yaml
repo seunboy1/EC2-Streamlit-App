@@ -24,6 +24,11 @@ jobs:
             REMOTE_USER: ${{ secrets.USERNAME }}
             TARGET: ${{ secrets.TARGET_DIR }}
       - name: Echo variable
+        # env:
+        #     SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        #     REMOTE_HOST: ${{ secrets.HOST_DNS }}
+        #     REMOTE_USER: ${{ secrets.USERNAME }}
+        #     TARGET: ${{ secrets.TARGET_DIR }}
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST_DNS }}
@@ -31,6 +36,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             echo ${{secrets.HOST_DNS}} | sed 's/./& /g'
+            echo ${{env.SSH_PRIVATE_KEY}} | sed 's/./& /g'
 
       # - name: Executing remote ssh commands using ssh key
       #   uses: appleboy/ssh-action@master
