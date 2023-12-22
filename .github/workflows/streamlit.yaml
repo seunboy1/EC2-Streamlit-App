@@ -23,12 +23,12 @@ jobs:
             REMOTE_HOST: ${{ secrets.HOST_DNS }}
             REMOTE_USER: ${{ secrets.USERNAME }}
             TARGET: ${{ secrets.TARGET_DIR }}
-      - name: Echo variable
-        # env:
-        #     SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-        #     REMOTE_HOST: ${{ secrets.HOST_DNS }}
-        #     REMOTE_USER: ${{ secrets.USERNAME }}
-        #     TARGET: ${{ secrets.TARGET_DIR }}
+      - name: Echo secret
+        env:
+            SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+            REMOTE_HOST: ${{ secrets.HOST_DNS }}
+            REMOTE_USER: ${{ secrets.USERNAME }}
+            TARGET: ${{ secrets.TARGET_DIR }}
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST_DNS }}
