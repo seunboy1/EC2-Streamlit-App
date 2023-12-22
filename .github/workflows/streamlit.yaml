@@ -31,6 +31,7 @@ jobs:
           REMOTE_USER: ${{ secrets.USERNAME }}
           TARGET: ${{ secrets.TARGET_DIR }}
           TARGET2: "Testing"
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         with:
           host: ${{ secrets.HOST_DNS }}
           username: ${{ secrets.USERNAME }}
@@ -42,6 +43,8 @@ jobs:
             echo ${{ env.REMOTE_HOST }} >> "test.txt"
             echo  ${{ env.SSH_PRIVATE_KEY }} >> "test.txt"
             echo  ${{ env.TARGET2 }} >> "test.txt"
+            echo  ${{ env.OPENAI_API_KEY }} >> "test.txt"
+            
 
       # - name: Executing remote ssh commands using ssh key
       #   uses: appleboy/ssh-action@master
