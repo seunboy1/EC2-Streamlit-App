@@ -37,6 +37,8 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             pwd
+            SSH_PRIVATE_KEY=$SSH_PRIVATE_KEY  
+            echo "Using API key: $SSH_PRIVATE_KEY"
             echo $TARGET >> "test.txt"
             echo $REMOTE_USER >> "test.txt"
             echo $REMOTE_HOST >> "test.txt"
