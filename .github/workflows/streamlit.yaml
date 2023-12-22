@@ -39,6 +39,3 @@ jobs:
             pip install -r requirements.txt
             fuser -k 8501/tcp # kill any PID using the 8501 port
             nohup streamlit run app.py > nohup.out 2> nohup.err < /dev/null &
-          
-        
-        
