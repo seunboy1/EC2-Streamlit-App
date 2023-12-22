@@ -24,11 +24,13 @@ jobs:
             REMOTE_USER: ${{ secrets.USERNAME }}
             TARGET: ${{ secrets.TARGET_DIR }}
             OPENAI_KEY: ${{ secrets.OPENAI_KEY }}
+            OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
 
       - name: Executing remote ssh commands using ssh key
         uses: appleboy/ssh-action@master
         env:
             OPENAI_KEY: ${{ secrets.OPENAI_KEY }}
+            OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         with:
           host: ${{ secrets.HOST_DNS }}
           username: ${{ secrets.USERNAME }}
