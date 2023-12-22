@@ -42,11 +42,11 @@ jobs:
             source ~/.streamlit/bin/activate
             cd /home/ubuntu/EC2-Streamlit-App
             pip install -r requirements.txt
+            fuser -k 8501/tcp # kill any PID using the 8501 port
+            nohup streamlit run app.py > nohup.out 2> nohup.err < /dev/null &
             echo $SSH_PRIVATE_KEY
             echo $USERNAME
             echo $HOST_DNS
-            fuser -k 8501/tcp # kill any PID using the 8501 port
-            nohup streamlit run app.py > nohup.out 2> nohup.err < /dev/null &
           
         
         
