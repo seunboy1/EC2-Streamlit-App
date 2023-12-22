@@ -1,5 +1,5 @@
 # EC2-Streamlit-App
-This is a simple project that shows how to deploy a GPT-3 app built with Streamlit on an AWS EC2 instance whike also using Github Actions as CI/CD pipeline. 
+This is a simple project that shows how to deploy a GPT-3 app built with Streamlit on an AWS EC2 instance while also using Github Actions as CI/CD pipeline. 
 
 <br/>
 
