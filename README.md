@@ -32,8 +32,8 @@ This is a simple project that shows how to deploy a GPT-3 app built with Streaml
     ```bash
         vim ~/.bashrc
         export OPENAI_KEY=your key
+        source ~/.bashrc
     ```
-   Nt: you have to reconnect to your ec2 instance to see the changes.
 6. Edit the security group of your ec2 to add an inbound rule for port 8501, since streamlit uses the 8501 port.
    ![inbound](assets/inbound.png)
 7. Run streamlit app in background
