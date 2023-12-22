@@ -26,11 +26,11 @@ jobs:
 
       # - name: Echo variable
       #   uses: appleboy/ssh-action@master
-      #   env:
-      #     REMOTE_HOST: ${{ secrets.HOST_DNS }}
-      #     REMOTE_USER: ${{ secrets.USERNAME }}
-      #     TARGET: ${{ secrets.TARGET_DIR }}
-      #     OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        env:
+          REMOTE_HOST: ${{ secrets.HOST_DNS }}
+          REMOTE_USER: ${{ secrets.USERNAME }}
+          TARGET: ${{ secrets.TARGET_DIR }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       #   with:
       #     host: ${{ secrets.HOST_DNS }}
       #     username: ${{ secrets.USERNAME }}
@@ -44,11 +44,14 @@ jobs:
 
       - name: Executing remote ssh commands using ssh key
         uses: appleboy/ssh-action@master
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         with:
           host: ${{ secrets.HOST_DNS }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
+            echo  openaikey=${{ env.OPENAI_API_KEY }} >> "test.txt"
             sudo apt-get -y update
             sudo apt install python3.10-venv 
             python3 -m venv ~/.streamlit
