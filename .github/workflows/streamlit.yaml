@@ -23,6 +23,7 @@ jobs:
             REMOTE_HOST: ${{ secrets.HOST_DNS }}
             REMOTE_USER: ${{ secrets.USERNAME }}
             TARGET: ${{ secrets.TARGET_DIR }}
+            OPENAI_KEY: ${{ secrets.OPENAI_KEY }}
 
       - name: Executing remote ssh commands using ssh key
         uses: appleboy/ssh-action@master
