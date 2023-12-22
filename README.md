@@ -38,7 +38,7 @@ This is a simple project that shows how to deploy a GPT-3 app built with Streaml
    ![inbound](assets/inbound.png)
 7. Run streamlit app in background
     ```bash
-        nohup streamlit run app.py &
+        nohup streamlit run app.py > nohup.out 2> nohup.err < /dev/null &
     ```
 8. Check out the app
    ```bash
