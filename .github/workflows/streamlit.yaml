@@ -29,15 +29,10 @@ jobs:
         uses: appleboy/ssh-action@master
         env:
             OPENAI_KEY: ${{ secrets.OPENAI_KEY }}
-            GITHUB_ENV: text.txt
         with:
           host: ${{ secrets.HOST_DNS }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          run: |
-            echo "My variable: $OPENAI_KEY"
-            # Save the environment variable to a file for later use
-            echo "MY_VARIABLE=$OPENAI_KEY" >> $GITHUB_ENV
           script: |
             sudo apt-get -y update
             sudo apt install python3.10-venv 
