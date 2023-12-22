@@ -51,7 +51,8 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            echo  export openaikey2=${{ env.OPENAI_API_KEY }} >> "~/.bashrc"
+            echo  export openaikey2=${{ env.OPENAI_API_KEY }} >> ~/.bashrc
+            source ~/.bashrc
             sudo apt-get -y update
             sudo apt install python3.10-venv 
             python3 -m venv ~/.streamlit
