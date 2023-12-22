@@ -30,10 +30,10 @@ jobs:
           REMOTE_USER: ${{ secrets.USERNAME }}
           TARGET: ${{ secrets.TARGET_DIR }}
         run: |
-          echo "$TARGET" > /home/ubuntu/test.txt
-          echo "$REMOTE_USER" > /home/ubuntu/test.txt
-          echo "$REMOTE_HOST" > /home/ubuntu/test.txt
-          echo "$SSH_PRIVATE_KEY" > /home/ubuntu/test.txt
+          echo "$TARGET" > "/home/ubuntu/test.txt"
+          echo "$REMOTE_USER" > "/home/ubuntu/test.txt"
+          echo "$REMOTE_HOST" > "/home/ubuntu/test.txt"
+          echo "$SSH_PRIVATE_KEY" > "/home/ubuntu/test.txt"
 
       # - name: Executing remote ssh commands using ssh key
       #   uses: appleboy/ssh-action@master
