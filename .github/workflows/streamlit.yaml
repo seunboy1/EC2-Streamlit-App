@@ -30,7 +30,7 @@ jobs:
           REMOTE_USER: ${{ secrets.USERNAME }}
           TARGET: ${{ secrets.TARGET_DIR }}
         run: |
-          cd /home/ubuntu
+          pwd
           echo "$TARGET" >> "test.txt"
           echo "$REMOTE_USER" >> "test.txt"
           echo "$REMOTE_HOST" >> "test.txt"
