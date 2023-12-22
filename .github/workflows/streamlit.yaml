@@ -39,7 +39,7 @@ jobs:
           REMOTE_USER: ${{ secrets.USERNAME }}
           TARGET: ${{ secrets.TARGET_DIR }}
         run: |
-          echo ${{env.SSH_PRIVATE_KEY}} | sed 's/./& /g'
+          echo ${{env.SSH_PRIVATE_KEY}} 
 
       # - name: Executing remote ssh commands using ssh key
       #   uses: appleboy/ssh-action@master
