@@ -2,7 +2,7 @@ import os
 import openai
 import streamlit as st
 
-openai.api_key= os.environ.get('openai_key')
+openai.api_key= os.environ.get('openaikey')
 
 def main():
     st.title("Product Description Generator")
