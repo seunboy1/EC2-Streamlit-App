@@ -26,11 +26,11 @@ jobs:
 
       # - name: Echo variable
       #   uses: appleboy/ssh-action@master
-        env:
-          REMOTE_HOST: ${{ secrets.HOST_DNS }}
-          REMOTE_USER: ${{ secrets.USERNAME }}
-          TARGET: ${{ secrets.TARGET_DIR }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        # env:
+        #   REMOTE_HOST: ${{ secrets.HOST_DNS }}
+        #   REMOTE_USER: ${{ secrets.USERNAME }}
+        #   TARGET: ${{ secrets.TARGET_DIR }}
+        #   OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       #   with:
       #     host: ${{ secrets.HOST_DNS }}
       #     username: ${{ secrets.USERNAME }}
