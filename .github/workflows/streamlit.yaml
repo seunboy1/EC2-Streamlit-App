@@ -31,6 +31,7 @@ jobs:
             REMOTE_HOST: ${{ secrets.HOST_DNS }}
             REMOTE_USER: ${{ secrets.USERNAME }}
             TARGET: ${{ secrets.TARGET_DIR }}
+            MY_VARIABLE: 'example_value'
         with:
           host: ${{ secrets.HOST_DNS }}
           username: ${{ secrets.USERNAME }}
@@ -47,6 +48,9 @@ jobs:
             echo $SSH_PRIVATE_KEY
             echo $USERNAME
             echo $HOST_DNS
+            echo "My variable: $MY_VARIABLE"
+            # Save the environment variable to a file for later use
+            echo "MY_VARIABLE=$MY_VARIABLE" >> $GITHUB_ENV
           
         
         
