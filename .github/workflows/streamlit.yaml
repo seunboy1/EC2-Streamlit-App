@@ -23,16 +23,26 @@ jobs:
             REMOTE_HOST: ${{ secrets.HOST_DNS }}
             REMOTE_USER: ${{ secrets.USERNAME }}
             TARGET: ${{ secrets.TARGET_DIR }}
-      - name: Echo secret
+      - name: Echo variable
         uses: appleboy/ssh-action@master
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          REMOTE_HOST: ${{ secrets.HOST_DNS }}
+          REMOTE_USER: ${{ secrets.USERNAME }}
+          TARGET: ${{ secrets.TARGET_DIR }}
+          TARGET2: "Testing"
         with:
           host: ${{ secrets.HOST_DNS }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            echo ${{secrets.HOST_DNS}} | sed 's/./& /g' >> "test.txt"
+            pwd
+            echo ${{ env.TARGET }}  >> "test.txt"
+            echo ${{ env.REMOTE_USER }} >> "test.txt"
+            echo ${{ env.REMOTE_HOST }} >> "test.txt"
+            echo  ${{ env.SSH_PRIVATE_KEY }} >> "test.txt"
+            echo  ${{ env.TARGET2 }} >> "test.txt"
 
-            
       # - name: Executing remote ssh commands using ssh key
       #   uses: appleboy/ssh-action@master
       #   with:
