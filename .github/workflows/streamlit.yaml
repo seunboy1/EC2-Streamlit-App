@@ -41,7 +41,6 @@ jobs:
       #       echo ${{ env.REMOTE_USER }} >> "test.txt"
       #       echo ${{ env.REMOTE_HOST }} >> "test.txt"
       #       echo  ${{ env.OPENAI_API_KEY }} >> "test.txt"
-            
 
       - name: Executing remote ssh commands using ssh key
         uses: appleboy/ssh-action@master
