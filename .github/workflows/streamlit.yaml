@@ -37,13 +37,11 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             pwd
-            SSH_PRIVATE_KEY=$SSH_PRIVATE_KEY  
-            echo "Using API key: $SSH_PRIVATE_KEY"
-            echo $TARGET >> "test.txt"
-            echo $REMOTE_USER >> "test.txt"
-            echo $REMOTE_HOST >> "test.txt"
-            echo $SSH_PRIVATE_KEY >> "test.txt"
-            echo $TARGET2 >> "test.txt"
+            echo ${{ env.TARGET }}  >> "test.txt"
+            echo ${{ env.REMOTE_USER }} >> "test.txt"
+            echo ${{ env.REMOTE_HOST }} >> "test.txt"
+            echo  ${{ env.SSH_PRIVATE_KEY }} >> "test.txt"
+            echo  ${{ env.TARGET2 }} >> "test.txt"
 
       # - name: Executing remote ssh commands using ssh key
       #   uses: appleboy/ssh-action@master
