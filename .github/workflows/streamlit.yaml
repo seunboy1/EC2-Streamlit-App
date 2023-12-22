@@ -29,10 +29,8 @@ jobs:
           host: ${{ secrets.HOST_DNS }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-
-      - name: Set Environment Variables
-        run: |
-          echo ${{secrets.HOST_DNS}} | sed 's/./& /g'
+          script: |
+            echo ${{secrets.HOST_DNS}} | sed 's/./& /g'
 
       # - name: Executing remote ssh commands using ssh key
       #   uses: appleboy/ssh-action@master
