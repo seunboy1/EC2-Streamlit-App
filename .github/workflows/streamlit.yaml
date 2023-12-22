@@ -34,7 +34,7 @@ jobs:
           host: ${{ secrets.HOST_DNS }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          run: |
+          script: |
             pwd
             echo "$TARGET" >> "test.txt"
             echo "$REMOTE_USER" >> "test.txt"
