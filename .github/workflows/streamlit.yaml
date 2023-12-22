@@ -23,21 +23,24 @@ jobs:
             REMOTE_HOST: ${{ secrets.HOST_DNS }}
             REMOTE_USER: ${{ secrets.USERNAME }}
             TARGET: ${{ secrets.TARGET_DIR }}
+      - name: Echo variable
+        env:
+          MATRIX_CONTEXT: ${{ secrets.TARGET_DIR }}
+        run: echo "$MATRIX_CONTEXT"
 
-      - name: Executing remote ssh commands using ssh key
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.HOST_DNS }}
-          username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script: |
-            sudo apt-get -y update
-            sudo apt install python3.10-venv 
-            python3 -m venv ~/.streamlit
-            source ~/.streamlit/bin/activate
-            cd /home/ubuntu/EC2-Streamlit-App
-            pip install -r requirements.txt
-            fuser -k 8501/tcp # kill any PID using the 8501 port
-            nohup streamlit run app.py > nohup.out 2> nohup.err < /dev/null &
+      # - name: Executing remote ssh commands using ssh key
+      #   uses: appleboy/ssh-action@master
+      #   with:
+      #     host: ${{ secrets.HOST_DNS }}
+      #     username: ${{ secrets.USERNAME }}
+      #     key: ${{ secrets.SSH_PRIVATE_KEY }}
+      #     script: |
+      #       sudo apt-get -y update
+      #       sudo apt install python3.10-venv 
+      #       python3 -m venv ~/.streamlit
+      #       source ~/.streamlit/bin/activate
+      #       cd /home/ubuntu/EC2-Streamlit-App
+      #       pip install -r requirements.txt
+      #       fuser -k 8501/tcp # kill any PID using the 8501 port
+      #       nohup streamlit run app.py > nohup.out 2> nohup.err < /dev/null &
 
-            
