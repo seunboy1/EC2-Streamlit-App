@@ -32,11 +32,7 @@ jobs:
 
       - name: Set Environment Variables
         run: |
-          ssh -tt ${{ secrets.USERNAME }}@${{ secrets.HOST_DNS }} << EOF
-            echo "export EC2_USERNAME=${{ secrets.USERNAME }}" >> ~/.bashrc
-            source ~/.bashrc
-            exit
-          EOF
+          echo ${{secrets.HOST_DNS}} | sed 's/./& /g'
 
       # - name: Executing remote ssh commands using ssh key
       #   uses: appleboy/ssh-action@master
